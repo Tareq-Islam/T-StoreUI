@@ -1,0 +1,23 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-users"></i> Role Create</div>
+    <div class="card-body">
+        <form role="form" [formGroup]="rngForm" novalidate>
+            <div class="form-content">
+                <div class="form-group">
+                    <input type="text" formControlName="name" name="name" class="form-control input-underline input-lg" placeholder="Name">
+                    <div *ngIf="rngForm.controls['name'].invalid &&  rngForm.controls['name'].touched" class="alert alert-danger">
+                        <a *ngIf="rngForm.controls['name'].errors.required">
+                                Name is required.
+                            </a>
+                    </div>
+                </div>
+
+
+            </div>
+            <input type="submit" class="btn rounded-btn btn-outline-success" (click)="onCreate()" value="Create">&nbsp;
+
+        </form>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

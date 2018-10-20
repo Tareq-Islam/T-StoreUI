@@ -1,0 +1,92 @@
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Users</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <i class="fa fa-users"></i> Create User
+
+
+            </div>
+            <div class="card-body">
+
+                <form role="form" [formGroup]="ungForm" novalidate>
+                    <div class="form-content">
+                        <div class="form-group">
+                            <input type="text" formControlName="firstName" name="firstName" class="form-control input-underline input-lg" placeholder="First Name">
+                            <div *ngIf="ungForm.controls['firstName'].invalid &&  ungForm.controls['firstName'].touched" class="alert alert-danger">
+                                <a *ngIf="ungForm.controls['firstName'].errors.required">
+                                        First Name is required.
+                                    </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" formControlName="lastName" name="lastName" class="form-control input-underline input-lg" placeholder="Last Name">
+                            <div *ngIf="ungForm.controls['lastName'].invalid &&  ungForm.controls['lastName'].touched" class="alert alert-danger">
+                                <a *ngIf="ungForm.controls['lastName'].errors.required">
+                                            Last Name is required.
+                                        </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" formControlName="email" name="email" class="form-control input-underline input-lg" placeholder="Email">
+                            <div *ngIf="ungForm.controls['email'].invalid &&  ungForm.controls['email'].touched" class="alert alert-danger">
+                                <a *ngIf="ungForm.controls['email'].errors.required">
+                                            Email is required.
+                                        </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="mdb-select md-form" multiple>
+                                        <option value="" disabled selected>Choose Role</option>
+                                        <span *ngFor="let item of roles">
+                                            <option  value=`${{item.name}}`>{{item.name}}</option>
+                                        </span>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="number" formControlName="phoneNumber" name="phoneNumber" class="form-control input-underline input-lg" placeholder="Phone Number">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="password" formControlName="password" name="password" class="form-control input-underline input-lg" placeholder="Password">
+                            <div *ngIf="ungForm.controls['password'].invalid &&  ungForm.controls['password'].touched" class="alert alert-danger">
+                                <a *ngIf="ungForm.controls['password'].errors.required">
+                                                Password is required.
+                                            </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" formControlName="confirmPassword" name="confirmPassword" class="form-control input-underline input-lg" placeholder="Confirm Password">
+                            <div *ngIf="ungForm.controls['confirmPassword'].invalid &&  ungForm.controls['confirmPassword'].touched" class="alert alert-danger">
+                                <a *ngIf="ungForm.controls['confirmPassword'].errors.required">
+                                                Password not match.
+                                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn rounded-btn btn-outline-success" (click)="onCreate()" value="Create">&nbsp;
+                    <a class="btn rounded-btn btn-outline-info" [routerLink]="['/admin/layout/user/list']">Back</a>
+
+                </form>
+
+
+
+            </div>
+            <!-- card body -->
+            <div class="card-footer small text-muted"></div>
+        </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+
+
+</div>
