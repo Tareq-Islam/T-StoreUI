@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\admin\\layout",
+    "\\src\\app\\admin\\layout\\user",
+    "\\src\\app\\admin\\layout\\user\\user-list-view"
+  ],
+  "PreviewInSolutionExplorer": false
+}

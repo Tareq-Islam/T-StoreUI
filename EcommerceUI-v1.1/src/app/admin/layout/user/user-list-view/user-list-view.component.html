@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Users</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-users"></i> All User List</div>
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="d-none">ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!--  -->
+                            <tr *ngFor="let item of userData">
+                                <td class="d-none">{{item.id}}</td>
+                                <td>{{item.firstName}}</td>
+                                <td>{{item.lastName}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.role}}</td>
+                                <td>{{item.phoneNumber}}</td>
+                                <td>
+                                    <a type="button" class="btn btn-success" [routerLink]="['/admin/layout/user/create']"><i class="fa fa-plus" aria-hidden="true"></i></a>&nbsp;
+                                    <a type="button" class="btn btn-info" [routerLink]="['/admin/layout/user/create']"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;
+                                    <a type="button" class="btn btn-danger" (click)="onDelete(item)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+
+
+</div>
